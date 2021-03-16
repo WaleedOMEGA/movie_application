@@ -12,16 +12,16 @@ export default {
   },
   data() {
     return {
-      movies: []
+      // movies: []
     };
   },
   computed: {
-    // movies() {
-    //   return this.$store.getters.getMovies;
-    // }
+    movies() {
+      return this.$store.getters.getMovies;
+    }
   },
   created() {
-    this.movies = this.$store.getters.getMovies;
+    // this.movies = this.$store.getters.getMovies;
   }
 };
 </script>

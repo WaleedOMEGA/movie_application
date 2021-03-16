@@ -3,13 +3,24 @@
     <div id="navbar">
       <h2>Movie.io</h2>
       <div>
-        <input type="text" placeholder="find movie ..." />
+        <input v-model="search" type="text" placeholder="find movie ..." />
       </div>
     </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      search: ""
+    };
+  },
+  watch: {
+    search() {
+      this.$store.dispatch("search", this.search);
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
 #navbar-wrap {
